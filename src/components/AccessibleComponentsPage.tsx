@@ -8,13 +8,36 @@ const AccessibleComponentsPage = () => {
       <header className="bg-gradient-to-r from-blue-600 to-purple-600">
         <div className="max-w-6xl mx-auto px-4 py-8">
           <h1 className="text-3xl font-bold text-white">CSCI 1300 - Accessible Components</h1>
+          <p className="mt-2 text-blue-100">Evaluating accessibility, usability, and inclusivity through input/output analysis of destructive action confirmations in Discord, Photoshop, and Microsoft Word</p>
        </div>
       </header>
 
       {/* Main Content */}
       <main className="max-w-6xl mx-auto px-4 py-8 space-y-12">
         {/* Analysis Tables Section */}
-        <section className="space-y-8">
+        <section className="mb-8">
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <div className="max-w-4xl mx-auto space-y-8">
+              <p className="text-gray-800 text-lg">
+                In this analysis, I explored the accessibility implications of destructive action confirmations—a critical yet often overlooked component of user interfaces. By examining popup dialogs across Discord, Photoshop, and Microsoft Word, I investigated how different applications handle these irreversible actions through various input methods and output indicators.
+              </p>
+
+              <div className="py-4">
+                <h2 className="text-3xl font-semibold text-gray-800 mb-6">What is a Destructive Action Dialog?</h2>
+                
+                <p className="text-gray-800 text-lg mb-6">
+                  A destructive action dialog serves as a crucial safety mechanism, requiring user confirmation before executing irreversible operations like deletions or permanent changes. These dialogs must balance efficient interaction with adequate protection against accidental actions.
+                </p>
+
+                <p className="text-gray-800 text-lg">
+                  Let's examine how different applications approach this challenge, and explore opportunities to enhance both accessibility and user safety.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="space-y-8 mt-4">
           <div>
             <h2 className="text-2xl font-semibold text-gray-800 mb-4">Input Analysis</h2>
             <div className="bg-white rounded-lg shadow-lg p-6 overflow-x-auto mb-8">
@@ -61,6 +84,15 @@ const AccessibleComponentsPage = () => {
                   </tr>
                 </tbody>
               </table>
+
+              <div className="mt-8 bg-blue-50 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-gray-800 mb-4">Key Findings & Improvements</h3>
+                <ul className="space-y-3 text-gray-800">
+                  <li><strong>Single-Click Vulnerability:</strong> Current confirmation dialogs often rely on a single click for destructive actions, making it too easy for users to accidentally confirm irreversible operations, particularly affecting users with motor control challenges.</li>
+                  <li><strong>Inadequate Visual Warnings:</strong> Existing interfaces lack clear visual indicators and warning messages about the destructive nature of actions, creating potential risks for users with cognitive impairments or those who process information differently.</li>
+                  <li><strong>Limited Interaction Feedback:</strong> Most applications provide minimal feedback about action states and confirmation requirements, lacking clear indicators of what actions are needed to proceed or how to safely cancel operations.</li>
+                </ul>
+              </div>
             </div>
 
             <div className="mt-8">
@@ -306,6 +338,24 @@ const AccessibleComponentsPage = () => {
                 Clear action button labeling with "(Click Again)" instruction promotes user confidence. Red button color reinforces destructive nature while maintaining accessibility.
               </p>
             </div>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h3 className="text-lg font-medium text-gray-800 mb-4">Intentional Trade-off Analysis</h3>
+            
+            <p className="text-gray-600 mb-4">
+              I deliberately traded immediate action efficiency for enhanced user safety and accessibility. By implementing a two-step confirmation process with explicit warning states, the design purposefully slows down destructive actions to prevent accidental triggering, particularly benefiting users with motor control challenges or cognitive processing needs.
+            </p>
+            
+            <p className="text-gray-600 mb-4">
+              This careful balance between efficiency and protection is achieved through a progression of states: starting with a clean, uncluttered interface that maintains Discord's simplicity, then transitioning to a more explicit warning state with high-contrast visual cues and keyboard shortcuts. This multi-step approach places user safety and accessibility above speed of execution.
+            </p>
+            
+            <p className="text-gray-600 mb-4">
+              While this design choice deliberately increases interaction time for destructive actions, it creates a more inclusive and safer interface by providing multiple confirmation checkpoints, clear visual feedback, and explicit instructions. The trade-off prioritizes error prevention and accessibility over rapid task completion, reflecting a conscious decision to favor user safety over speed.
+            </p>
           </div>
         </section>
 
